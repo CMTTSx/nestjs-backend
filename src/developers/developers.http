@@ -1,0 +1,28 @@
+### LIST developers
+
+GET    http://localhost:3000/developers
+
+### CREATE developer
+
+POST   http://localhost:3000/developers
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@gmail.com",
+    "dateOfBirth": "1990-01-01"
+}
+
+### UPDATE developer
+
+PATCH  http://localhost:3000/developers/1
+
+{
+    "name": "John Doe",
+    "email": "john.doe@gmail.com",
+    "dateOfBirth": "1990-01-01"
+}
+
+### DELETE developer
+
+DELETE http://localhost:3000/developers/1
