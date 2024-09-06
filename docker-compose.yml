@@ -9,7 +9,7 @@ services:
       - pg-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgresdb00
+      POSTGRES_PASSWORD: 
 
   adminer:
     image: adminer
