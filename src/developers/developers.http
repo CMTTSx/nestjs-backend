@@ -15,14 +15,12 @@ Content-Type: application/json
 
 ### UPDATE developer
 
-PATCH  http://localhost:3000/developers/1
+PATCH http://localhost:3000/developers/dev_ewpWRbThMqi0KxSO8EC83
+Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "email": "john.doe@gmail.com",
-    "dateOfBirth": "1990-01-01"
+    "email": "teste@acme.com"
 }
-
 ### DELETE developer
 
-DELETE http://localhost:3000/developers/1
+DELETE http://localhost:3000/developers/dev_ewpWRbThMqi0KxSO8EC83

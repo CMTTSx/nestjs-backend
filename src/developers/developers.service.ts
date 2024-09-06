@@ -9,7 +9,7 @@ import { Developer } from './entities/developer.entity';
 export class DevelopersService {
   constructor(
     @InjectRepository(Developer)
-    private readonly repository: Repository<Developer>
+    private readonly repository: Repository<Developer>,
   ) {}
 
   create(dto: CreateDeveloperDto) {
@@ -35,6 +35,6 @@ export class DevelopersService {
   async remove(id: string) {
     const developer = await this.repository.findOneBy({ id });
     if (!developer) return null;
-    return this.repository.save(developer);
+    return this.repository.remove(developer);
   }
 }

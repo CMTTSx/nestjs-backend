@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Patch, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  NotFoundException,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { DevelopersService } from './developers.service';
 import { CreateDeveloperDto } from './dto/create-developer.dto';
 import { UpdateDeveloperDto } from './dto/update-developer.dto';
@@ -18,13 +28,23 @@ export class DevelopersController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.developersService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    const developer = await this.developersService.findOne(id);
+    if (!developer) throw new NotFoundException();
+    return developer;
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateDeveloperDto: UpdateDeveloperDto) {
-    return this.developersService.update(id, updateDeveloperDto);
+  async update(
+    @Param('id') id: string,
+    @Body() updateDeveloperDto: UpdateDeveloperDto,
+  ) {
+    const developer = await this.developersService.update(
+      id,
+      updateDeveloperDto,
+    );
+    if (!developer) throw new NotFoundException();
+    return developer;
   }
 
   @Delete(':id')
