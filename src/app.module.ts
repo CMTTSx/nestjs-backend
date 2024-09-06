@@ -11,7 +11,7 @@ import { DevelopersModule } from './developers/developers.module';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'postgresdb00',
+      password: ,
       database: 'nestjs_backend',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
